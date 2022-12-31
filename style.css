@@ -1,3 +1,9 @@
+body {
+    background-image: url("images/math-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #wrapper {
     display: flex;
     justify-content: center;
@@ -6,21 +12,23 @@
 #container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    width: 410px;
-    height: 610px;
+    justify-content: space-around;
+    width: 425px;
+    height: 625px;
     border: 5px solid black;
     border-radius: 10px;
+    background-color: white;
 }
 
 #display {
     display: flex;
-    width: 400px;
-    height: 125px; 
+    width: 415px;
+    height: 150px; 
     border: 3px solid black;
     border-radius: 10px;
     box-sizing: border-box;
-    font-size: 64px;
+    font-size: 72px;
+    background-color: lightskyblue;
     justify-content: flex-end;
     align-items: flex-end;
     margin-top: 10px; 
@@ -30,7 +38,21 @@
 button {
     height: 100px;
     width: 100px;
-    box-sizing: border-box;
-    gap: 5px;
+    border: 1px solid black; 
     border-radius: 20px;
+    box-sizing: border-box;
+    gap: 1px;
+    font-size: 32px; 
+}
+
+#clear {
+    background-color: green;
+}
+
+#equals {
+    background-color: red;
+}
+
+#divide, #multiply, #subtract, #add {
+    background-color: orange;
 }
