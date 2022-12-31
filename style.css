@@ -1,0 +1,27 @@
+#wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 600px;
+    border: 1px solid black;
+}
+
+#display {
+    display: flex;
+    width: 400px;
+    height: 100px; 
+    box-sizing: border-box;
+    font-size: 64px;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+button {
+    height: 100px;
+    width: 100px;
+}
