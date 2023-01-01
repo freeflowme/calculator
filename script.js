@@ -6,6 +6,11 @@ let input2 = prompt('Please enter a number');
 let y = parseFloat(input2);
 */
 
+let stack = [];
+let x = stack[0];
+let operator = stack[1];
+let y = stack[2];
+
 //basic calculator functions
 function add(x, y) {
     return x + y; 
@@ -46,6 +51,8 @@ const numBtns = document.querySelectorAll(".numBtn");
             const dsplyVal = document.createElement("div");
             dsplyVal.textContent = numBtn.textContent;
             document.querySelector("#display").appendChild(dsplyVal);
+            stack.push(dsplyVal.textContent);
+            console.log(stack);
     })
 })
 
@@ -54,4 +61,3 @@ const clear = document.querySelector("#clearBtn");
         while(display.firstChild)
             display.firstChild.remove();
 })
-
