@@ -9,16 +9,16 @@ let y = parseFloat(input2);
 //basic calculator functions
 function add(x, y) {
     return x + y; 
-};
+}
 function subtract(x, y) {
     return x - y;
-};
+}
 function multiply(x, y) {
     return x * y;
-};
+}
 function divide(x, y) {
     return x / y; 
-};
+}
 
 //call coresponding basic function 
 function operate(x, operator, y) {
@@ -33,16 +33,27 @@ function operate(x, operator, y) {
     } else if(operator === "/") {
         return divide(x, y);
     }
-};
+}
 
 /*
 console.log(operate(x, operator, y));
 */
 
 //button functionality
-const numberBtns = document.querySelectorAll(".numberBtn");
-    numberBtns.forEach(numberBtn => {
-    numberBtn.addEventListener("click", () => {
-    console.log(numberBtn.value);
-    });
-});
+const numBtns = document.querySelectorAll(".numBtn");
+    numBtns.forEach(numBtn => {
+        numBtn.addEventListener("click", () => {
+            console.log(numBtn.value);
+            const btnVal = numBtn.getAttribute("value");
+            const dsplyVal = document.createElement("div");
+            dsplyVal.setAttribute("id", "dsplyVal");
+            dsplyVal.textContent = btnVal;
+            document.querySelector("#display").appendChild(dsplyVal);
+    })
+})
+
+const clear = document.querySelector("#clearBtn");
+    clearBtn.addEventListener("click", () => {
+        while(display.firstChild)
+            display.firstChild.remove();
+    })
