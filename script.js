@@ -43,11 +43,8 @@ console.log(operate(x, operator, y));
 const numBtns = document.querySelectorAll(".numBtn");
     numBtns.forEach(numBtn => {
         numBtn.addEventListener("click", () => {
-            console.log(numBtn.value);
-            const btnVal = numBtn.getAttribute("value");
             const dsplyVal = document.createElement("div");
-            dsplyVal.setAttribute("id", "dsplyVal");
-            dsplyVal.textContent = btnVal;
+            dsplyVal.textContent = numBtn.textContent;
             document.querySelector("#display").appendChild(dsplyVal);
     })
 })
@@ -56,4 +53,5 @@ const clear = document.querySelector("#clearBtn");
     clearBtn.addEventListener("click", () => {
         while(display.firstChild)
             display.firstChild.remove();
-    })
+})
+
