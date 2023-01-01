@@ -50,11 +50,42 @@ const numBtns = document.querySelectorAll(".numBtn");
         numBtn.addEventListener("click", () => {
             const dsplyVal = document.createElement("div");
             dsplyVal.textContent = numBtn.textContent;
-            document.querySelector("#display").appendChild(dsplyVal);
             stack.push(dsplyVal.textContent);
-            console.log(stack);
+            document.querySelector("#display").appendChild(dsplyVal);
     })
 })
+
+const opBtns = document.querySelectorAll(".opBtn");
+    opBtns.forEach(opBtn => {
+        opBtn.addEventListener("click", () => {
+            if(opBtn.id === "#addBtn") {
+                const addVal = document.createElement("div");
+                addVal.textContent = addBtn.textContent;
+                //convert all the previously-entered numbers in stack[] to a single number
+                stack.push(addVal.textContent);
+                document.querySelector("#display").appendChild(addVal);
+            } else if(opBtn.id === "#subBtn") {
+                const subVal = document.createElement("div");
+                subVal.textContent = subBtn.textContent;
+                //convert all the previously-entered numbers in stack[] to a single number
+                stack.push(subVal.textContent);
+                document.querySelector("#display").appendChild(subVal);
+            } else if(opBtn.id === "#multBtn") {
+                const multVal = document.createElement("div");
+                multVal.textContent = multBtn.textContent;
+                //convert all the previously-entered numbers in stack[] to a single number
+                stack.push(multVal.textContent);
+                document.querySelector("#display").appendChild(multVal);
+            } else if(opBtn.id === "#divBtn") {
+                const divVal = document.createElement("div");
+                divVal.textContent = divBtn.textContent;
+                //convert all the previously-entered numbers in stack[] to a single number
+                stack.push(divVal.textContent);
+                document.querySelector("#display").appendChild(divVal);
+            }
+    })
+})
+
 
 const clear = document.querySelector("#clearBtn");
     clearBtn.addEventListener("click", () => {
