@@ -59,13 +59,13 @@ const opBtns = document.querySelectorAll(".opBtn");
     opBtns.forEach(opBtn => {
         opBtn.addEventListener("click", () => {
             const opVal = document.createElement("div");
-            if(opBtn.id === "#addBtn") {
+            if(opBtn.id === "addBtn") {
                 opVal.textContent = addBtn.textContent;
-            } else if(opBtn.id === "#subBtn") {
+            } else if(opBtn.id === "subBtn") {
                 opVal.textContent = subBtn.textContent;
-            } else if(opBtn.id === "#multBtn") {
+            } else if(opBtn.id === "multBtn") {
                 opVal.textContent = multBtn.textContent;
-            } else if(opBtn.id === "#divBtn") {
+            } else if(opBtn.id === "divBtn") {
                 opVal.textContent = divBtn.textContent;
             }
             //convert all the previously-entered numbers in stack[] to a single number
@@ -73,7 +73,6 @@ const opBtns = document.querySelectorAll(".opBtn");
             document.querySelector("#display").appendChild(opVal);
     })
 })
-
 
 const clear = document.querySelector("#clearBtn");
     clearBtn.addEventListener("click", () => {
