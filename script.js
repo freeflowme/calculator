@@ -70,8 +70,16 @@ const opBtns = document.querySelectorAll(".opBtn");
             } else if(opBtn.id === "divBtn") {
                 opVal.textContent = divBtn.textContent;
             }
-            //convert all the previously-entered numbers in stack[] to a single number
+            
+            let num = Number(stack.join(""));
+            while(stack.length > 0) {
+                stack.shift();
+            }
+            stack.push(num);
             stack.push(opVal.textContent);
+
+            console.log(stack);
+
             document.querySelector("#display").appendChild(opVal);
     })
 })
