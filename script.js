@@ -7,9 +7,9 @@ let y = parseFloat(input2);
 */
 
 let stack = [];
-let x = stack[0];
-let operator = stack[1];
-let y = stack[2];
+let x = [];
+let operator = [];
+let y = [];
 
 //basic calculator functions
 function add(x, y) {
@@ -54,8 +54,18 @@ const numBtns = document.querySelectorAll(".numBtn");
             document.querySelector("#display").appendChild(dsplyVal);
 
             console.log(stack);
+        })
     })
-})
+
+const decimal = document.querySelector("#dcmlBtn");
+    dcmlBtn.addEventListener("click", () => {
+        const dcmlVal = document.createElement("div");
+        dcmlVal.textContent = dcmlBtn.textContent;
+        stack.push(dcmlVal.textContent);
+        document.querySelector("#display").appendChild(dcmlVal);
+
+        console.log(stack);
+    })
 
 const opBtns = document.querySelectorAll(".opBtn");
     opBtns.forEach(opBtn => {
@@ -72,32 +82,29 @@ const opBtns = document.querySelectorAll(".opBtn");
             }
             document.querySelector("#display").appendChild(opVal);
 
-            const num = Number(stack.join(""));
+            const num1 = Number(stack.join(""));
             while(stack.length > 0) {
                 stack.shift(); 
             }
-            stack.push(num);
-            stack.push(opVal.textContent);
+            x.push(num1);
+            operator.push(opVal.textContent);
 
-            console.log(stack);
+            console.log(x);
+            console.log(operator);
+        })
     })
-})
 
-const decimal = document.querySelector("#dcmlBtn");
-    dcmlBtn.addEventListener("click", () => {
-        const dcmlVal = document.createElement("div");
-            dcmlVal.textContent = dcmlBtn.textContent;
-        document.querySelector("#display").appendChild(dcmlVal);
-        
-        const num = Number(stack.join(""));
-        while(stack.length > 0) {
-            stack.shift();
-        }
-        stack.push(num);
-        stack.push(dcmlVal.textcontent);
+const equals = document.querySelector("#equalsBtn");
+    equalsBtn.addEventListener("click", () => {
+        const num2 = Number(stack.join(""));
+            while(stack.length > 0) {
+                stack.shift(); 
+            }
+            y.push(num2);
+            
+            console.log(y);
+    })
 
-        console.log(stack);
-})
 
 const clear = document.querySelector("#clearBtn");
     clearBtn.addEventListener("click", () => {
@@ -108,4 +115,4 @@ const clear = document.querySelector("#clearBtn");
             display.firstChild.remove();
         }
         console.log(stack);
-})
+    })
