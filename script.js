@@ -52,6 +52,8 @@ const numBtns = document.querySelectorAll(".numBtn");
             dsplyVal.textContent = numBtn.textContent;
             stack.push(dsplyVal.textContent);
             document.querySelector("#display").appendChild(dsplyVal);
+
+            console.log(stack);
     })
 })
 
@@ -76,6 +78,11 @@ const opBtns = document.querySelectorAll(".opBtn");
 
 const clear = document.querySelector("#clearBtn");
     clearBtn.addEventListener("click", () => {
-        while(display.firstChild)
+        while(stack.length > 0) {
+            stack.shift();
+        }
+        while(display.firstChild) {
             display.firstChild.remove();
+        }
+        console.log(stack);
 })
