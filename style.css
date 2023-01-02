@@ -36,8 +36,8 @@ body {
 }
 
 button {
-    height: 100px;
     width: 100px;
+    height: 80px;
     border: 1px solid black; 
     border-radius: 20px;
     box-sizing: border-box;
@@ -45,14 +45,20 @@ button {
     font-size: 32px; 
 }
 
-#clear {
+#clearBtn {
     background-color: green;
 }
 
-#equals {
+#empty {
+   width: 300px; 
+   border: none;
+   font-family: "droid sans";
+}
+
+#equalsBtn {
     background-color: red;
 }
 
-#divide, #multiply, #subtract, #add {
+#divBtn, #multBtn, #subBtn, #addBtn {
     background-color: orange;
 }
