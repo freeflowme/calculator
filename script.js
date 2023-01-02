@@ -70,18 +70,33 @@ const opBtns = document.querySelectorAll(".opBtn");
             } else if(opBtn.id === "divBtn") {
                 opVal.textContent = divBtn.textContent;
             }
-            
-            let num = Number(stack.join(""));
+            document.querySelector("#display").appendChild(opVal);
+
+            const num = Number(stack.join(""));
             while(stack.length > 0) {
-                stack.shift();
+                stack.shift(); 
             }
             stack.push(num);
             stack.push(opVal.textContent);
 
             console.log(stack);
-
-            document.querySelector("#display").appendChild(opVal);
     })
+})
+
+const decimal = document.querySelector("#dcmlBtn");
+    dcmlBtn.addEventListener("click", () => {
+        const dcmlVal = document.createElement("div");
+            dcmlVal.textContent = dcmlBtn.textContent;
+        document.querySelector("#display").appendChild(dcmlVal);
+        
+        const num = Number(stack.join(""));
+        while(stack.length > 0) {
+            stack.shift();
+        }
+        stack.push(num);
+        stack.push(dcmlVal.textcontent);
+
+        console.log(stack);
 })
 
 const clear = document.querySelector("#clearBtn");
