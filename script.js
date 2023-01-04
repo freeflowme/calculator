@@ -5,7 +5,7 @@ let yArray = [];
 
 //basic calculator functions
 function add(x, y) {
-    return x + y; 
+    return x + y;
 }
 function subtract(x, y) {
     return x - y;
@@ -109,18 +109,18 @@ const equals = document.querySelector("#equalsBtn");
             while(stack.length > 0) {
                 stack.shift(); 
             }
+            console.log(yArray);
             
-        operate();
+        const ans = operate();
+        console.log(ans);
 
         while(display.firstChild) {
             display.firstChild.remove();
         }
-        const ansVal = document.createElement("div");
-        ansVal.textContent = // ?????
-        document.querySelector("display").appendChild(ansVal);
-
-        console.log(yArray);
-        console.log(operate());
+        
+        const dsplyAns = document.createElement("div");
+        dsplyAns.textContent = ans;
+        document.querySelector("#display").appendChild(dsplyAns);   
     })
 
 const clear = document.querySelector("#clearBtn");
