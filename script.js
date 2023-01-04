@@ -1,15 +1,7 @@
-/*
-let input1 = prompt('Please enter a number');
-let x = parseFloat(input1);
-let operator = prompt("Please enter +, -, *, or /");
-let input2 = prompt('Please enter a number');
-let y = parseFloat(input2);
-*/
-
 let stack = [];
-let x = [];
-let operator = [];
-let y = [];
+let xArray = [];
+let opArray = [];
+let yArray = [];
 
 //basic calculator functions
 function add(x, y) {
@@ -25,8 +17,28 @@ function divide(x, y) {
     return x / y; 
 }
 
+//convert arrays into calculable valeus
+function getX() {
+    let x = Number(xArray[0]);
+    console.log(x);
+    return x;
+}
+function getOperator() {
+    let operator = opArray.toString();
+    console.log(operator);
+    return operator;
+}
+function getY() {
+    let y = Number(yArray[0]);
+    console.log(y);
+    return y;
+}
+
 //call coresponding basic function 
 function operate(x, operator, y) {
+    getX(); 
+    getOperator(); 
+    getY();
     if(typeof x !== "number" || typeof y !== "number") {
         return
     } else if(operator === "+") {
@@ -86,11 +98,11 @@ const opBtns = document.querySelectorAll(".opBtn");
             while(stack.length > 0) {
                 stack.shift(); 
             }
-            x.push(num1);
-            operator.push(opVal.textContent);
+            xArray.push(num1);
+            opArray.push(opVal.textContent);
 
-            console.log(x);
-            console.log(operator);
+            console.log(xArray);
+            console.log(opArray);
         })
     })
 
@@ -100,11 +112,10 @@ const equals = document.querySelector("#equalsBtn");
             while(stack.length > 0) {
                 stack.shift(); 
             }
-            y.push(num2);
-            
-            console.log(y);
+            yArray.push(num2);
+            console.log(yArray);
+            console.log(operate());
     })
-
 
 const clear = document.querySelector("#clearBtn");
     clearBtn.addEventListener("click", () => {
@@ -116,3 +127,12 @@ const clear = document.querySelector("#clearBtn");
         }
         console.log(stack);
     })
+
+//pre-button functionality
+/*
+let input1 = prompt('Please enter a number');
+let x = parseFloat(input1);
+let operator = prompt("Please enter +, -, *, or /");
+let input2 = prompt('Please enter a number');
+let y = parseFloat(input2);
+*/
