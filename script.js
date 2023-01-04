@@ -134,6 +134,15 @@ const equals = document.querySelector("#equalsBtn");
         document.querySelector("#display").appendChild(dsplyAns);   
     })
 
+const bkspc = document.querySelector("#bkspcBtn");
+    bkspcBtn.addEventListener("click", () => {
+        stack.pop(); 
+        console.log(stack);
+
+        document.querySelector("#display");
+        display.lastChild.remove();
+    })
+
 const clear = document.querySelector("#clearBtn");
     clearBtn.addEventListener("click", () => {
         while(stack.length > 0) {
@@ -151,6 +160,8 @@ const clear = document.querySelector("#clearBtn");
         while(display.firstChild) {
             display.firstChild.remove();
         }
+
+        console.log(stack);
     })
 
 //pre-button functionality
