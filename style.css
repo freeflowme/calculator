@@ -45,6 +45,11 @@ button {
     font-size: 32px; 
 }
 
+button:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px 1px rbga(0, 0, 0, .24);   
+}
+
 #clearBtn {
     background-color: green;
 }
