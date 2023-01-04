@@ -105,19 +105,30 @@ const opBtns = document.querySelectorAll(".opBtn");
 const equals = document.querySelector("#equalsBtn");
     equalsBtn.addEventListener("click", () => {
         const num2 = Number(stack.join(""));
-            yArray.push(num2);
-            while(stack.length > 0) {
-                stack.shift(); 
-            }
-            console.log(yArray);
+        yArray.push(num2);
+        console.log(yArray);
+        while(stack.length > 0) {
+            stack.shift();
+        }
             
         const ans = operate();
         console.log(ans);
+        stack.push(ans);
+        console.log(stack);
 
+        while(xArray.length > 0) {
+            xArray.shift();
+        }
+        while(opArray.length > 0) {
+            opArray.shift();
+        }
+        while(yArray.length >0) {
+            yArray.shift();
+        }
+            
         while(display.firstChild) {
             display.firstChild.remove();
         }
-        
         const dsplyAns = document.createElement("div");
         dsplyAns.textContent = ans;
         document.querySelector("#display").appendChild(dsplyAns);   
