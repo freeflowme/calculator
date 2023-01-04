@@ -37,7 +37,7 @@ body {
 
 button {
     width: 100px;
-    height: 80px;
+    height: 85px;
     border: 1px solid black; 
     border-radius: 20px;
     box-sizing: border-box;
@@ -49,10 +49,15 @@ button {
     background-color: green;
 }
 
+#bkspcBtn {
+    background-color: blue;
+}
+
 #empty {
-   width: 300px; 
+   width: 200px; 
    border: none;
-   font-family: "droid sans";
+   font-family: sans-serif;
+   font-size: 24px;
 }
 
 #equalsBtn {
