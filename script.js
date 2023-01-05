@@ -235,6 +235,32 @@ document.addEventListener("keydown", (event) => {
         const dsplyAns = document.createElement("div");
         dsplyAns.textContent = ans;
         document.querySelector("#display").appendChild(dsplyAns);
+    } else if(event.key === "Backspace") {
+        if(stack.length > 0) {
+            stack.pop();
+            document.querySelector("#display");
+            display.lastChild.remove(); 
+        }
+
+        console.log(stack);
+    } else if(event.key === "Escape") {
+        while(stack.length > 0) {
+            stack.shift();
+        }
+        while(xArray.length > 0) {
+            xArray.shift();
+        }
+        while(opArray.length > 0) {
+            opArray.shift();
+        }
+        while(yArray.length > 0) {
+            yArray.shift();
+        }
+        while(display.firstChild) {
+            display.firstChild.remove();
+        }
+
+        console.log(stack);
     }
 })
 
