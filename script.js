@@ -52,7 +52,7 @@ function operate() {
     }
 }
 
-//button functionality
+//HTML button functionality
 const numBtns = document.querySelectorAll(".numBtn");
     numBtns.forEach(numBtn => {
         numBtn.addEventListener("click", () => {
@@ -99,6 +99,7 @@ const opBtns = document.querySelectorAll(".opBtn");
 
             console.log(xArray);
             console.log(opArray);
+            console.log(stack);
         })
     })
 
@@ -165,6 +166,43 @@ const clear = document.querySelector("#clearBtn");
 
         console.log(stack);
     })
+
+//keyboard functionality
+document.addEventListener("keydown", (event) => {
+    if(event.key >= 0 && event.key <= 9) {
+        const numKey = event.key;
+        stack.push(numKey);
+        console.log(stack);
+
+        const dsplyNum = document.createElement("div");
+        dsplyNum.textContent = numKey;
+        document.querySelector("#display").appendChild(dsplyNum);
+    } else if(event.key === ".") {
+        const dcmlKey = event.key;
+        stack.push(dcmlKey);
+        console.log(stack);
+
+        const dsplyDcml = document.createElement("div");
+        dsplyDcml.textContent = dcmlKey;
+        document.querySelector("#display").appendChild(dsplyDcml);
+    } else if (
+        (event.key === "+") ||
+        (event.key === "-") ||
+        (event.key === "*") ||
+        (event.key === "/")
+        ) {
+        const opKey = event.key
+        const num1 = Number(stack.join(""));
+        xArray.push(num1);
+        opArray.push(opKey);
+        while(stack.length > 0) {
+        stack.shift(); 
+        }
+
+        console.log(xArray);
+        console.log(opArray);
+    }
+})
 
 //pre-button functionality
 /*
