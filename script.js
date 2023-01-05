@@ -136,11 +136,13 @@ const equals = document.querySelector("#equalsBtn");
 
 const bkspc = document.querySelector("#bkspcBtn");
     bkspcBtn.addEventListener("click", () => {
-        stack.pop(); 
-        console.log(stack);
+        if(stack.length > 0) {
+            stack.pop();
+            document.querySelector("#display");
+            display.lastChild.remove(); 
+        }
 
-        document.querySelector("#display");
-        display.lastChild.remove();
+        console.log(stack);
     })
 
 const clear = document.querySelector("#clearBtn");
